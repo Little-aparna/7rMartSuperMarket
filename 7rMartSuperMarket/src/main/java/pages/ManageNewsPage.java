@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utility.PageUtility;
+import utility.WaitUtility;
 
 public class ManageNewsPage {
 	public WebDriver driver;
@@ -32,9 +33,9 @@ public class ManageNewsPage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alertDisplayed;
 	public void manageNewsButton() {
-
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOf(manageNewsButton));
+         WaitUtility wait=new WaitUtility();
+         wait.waitForElement(driver, manageNewsButton);
+		
 		manageNewsButton.click();
 
 	}

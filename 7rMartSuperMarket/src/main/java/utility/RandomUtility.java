@@ -8,9 +8,9 @@ public class RandomUtility {
 		return faker.name().firstName();
 	}
 
-	public String createaRandomName1() {
+	public String createARandomPassword() {
 		Faker faker = new Faker();
-		return faker.name().fullName();
+		return faker.name().firstName();
 	}
 
 	public String createaRandomName2() {
@@ -32,5 +32,6 @@ public class RandomUtility {
 		Faker faker = new Faker();
 		return faker.name().prefix();
 	}
+	
 
 }

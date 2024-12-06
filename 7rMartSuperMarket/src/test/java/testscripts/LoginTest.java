@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -16,7 +17,7 @@ public class LoginTest extends Base{
 	public void verifyUserAbleToLoginWithValidUsernameAndValidPassword()
 	{
 		
-		String username=ExcelUtility.getString(1, 0, "LoginPage");
+		String username=ExcelUtility.getString(0, 1, "LoginPage");
 		String password=ExcelUtility.getString(1, 1, "LoginPage");
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username);
@@ -27,7 +28,7 @@ public class LoginTest extends Base{
 		Assert.assertTrue(isNavigatedToDashBoard, "unable to login with valid credentials");
 		
 	}
-	@Test(groups= {"smoke"},priority=2)
+	@Test(description="for invalid user name",groups= {"smoke"},priority=2)
 	public void verifyUserAbleTologinWithInvalidUsername()
 	{
 		String username=ExcelUtility.getString(2, 0,"LoginPage");
@@ -39,7 +40,7 @@ public class LoginTest extends Base{
 	    boolean isAlertVisibleDisplayed =loginpage.isAlertDisplayed();
 	    Assert.assertTrue(isAlertVisibleDisplayed, "user able to login with invalid credentials");
 	 }
-	@Test(groups= {"regression"},priority=3)
+	@Test(description="for invalid password",groups= {"regression"},priority=3)
 	public void userAbleToLoginWithInvalidPassword()
 	{
 		
@@ -53,12 +54,11 @@ public class LoginTest extends Base{
 	    Assert.assertTrue(isAlertVisibleDisplayed, "user able to login with invalid credentials");
 	 }	
 		
-	@Test
-	public void verifyUserAbleToLoginWithInvalidUsernameAndInvalidPassword()
+	@Test(description="for invalid user name and password",dataProvider="InvalidLoginData")
+	public void verifyUserAbleToLoginWithInvalidUsernameAndInvalidPassword(String username,String password)
 	{
 		
-		String username=ExcelUtility.getString(4, 0, "LoginPage");
-		String password=ExcelUtility.getString(4, 1, "LoginPage");
+		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username);
 		loginpage.enterpassWordOnPasswordField(password);
@@ -67,5 +67,13 @@ public class LoginTest extends Base{
 	    Assert.assertTrue(isAlertVisibleDisplayed, "user able to login with invalid credentials");
 	
 	}
-
+	@DataProvider(name="InvalidLoginData")
+     public Object[][] getDataFromDataProvider()
+     {
+    	 return new Object[][] {  
+    		 
+    	new Object[] {"abc","abc"}	 ,
+    	new Object[] {"123","123"}		 
+    	 };
+     }
 }

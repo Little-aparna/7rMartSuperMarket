@@ -10,7 +10,7 @@ import utility.ExcelUtility;
 import pages.LoginPage;
 
 public class ManageCategoriesTest extends Base {
-	@Test
+	@Test(description="to verify user able to view and edit manage category",groups= {"smoke"})
 	public void verifyUserAbleToEditAndViewOnManageCategories() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

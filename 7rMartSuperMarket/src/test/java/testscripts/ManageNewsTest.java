@@ -8,7 +8,7 @@ import pages.ManageNewsPage;
 import utility.ExcelUtility;
 
 public class ManageNewsTest extends Base {
-	@Test
+	@Test(description="to verify user able to edit and view manage news",groups= {"smoke"})
 	public void verifyUserAbleToEditAndViewOnManageNewsList()
 	{
 	String username = ExcelUtility.getString(1, 0, "LoginPage");

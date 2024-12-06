@@ -9,7 +9,7 @@ import pages.SubCategoryPage;
 import utility.ExcelUtility;
 
 public class SubCategoryTest extends Base {
-	@Test
+	@Test(description="to verify user able to edit and view sub category",groups= {"smoke"})
 	public void verifyUserAbleToEditAndViewOnSubCategoryList() {
 
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
