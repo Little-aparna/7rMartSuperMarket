@@ -36,7 +36,7 @@ public class ManageContactPage {
 	public void clickOnManageContactPage() {
 
 		WaitUtility waitutility = new WaitUtility();
-		waitutility.waitForElement(driver, manageContact);
+		waitutility.waitForElementVisible(driver, manageContact);
 		manageContact.click();
 
 	}

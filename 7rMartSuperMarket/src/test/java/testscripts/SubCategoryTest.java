@@ -17,9 +17,8 @@ public class SubCategoryTest extends Base {
 		String enterSubCategory=ExcelUtility.getString(6, 0, "LoginPage");				
 		String filePath=Constants.CALCULATOR;
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(username);
-		loginpage.enterpassWordOnPasswordField(password);
-		loginpage.signInClickOn();
+		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();
+		
 		SubCategoryPage subcategorypage = new SubCategoryPage(driver);
 		subcategorypage.clickOnSubCategoryButton();
 		subcategorypage.isCategoryDisplayed();
@@ -32,6 +31,7 @@ public class SubCategoryTest extends Base {
 		subcategorypage.enterTheSubCategoryElements(enterSubCategory);
 		subcategorypage.dropDown1();
 		subcategorypage.imageUploading(filePath);
+		subcategorypage.scrollDown();
 		subcategorypage.saveNewAddCategory();
 		boolean navigatedToAlert = subcategorypage.isAlertDisplayed();
 		Assert.assertTrue(navigatedToAlert, " new sub category is not added");

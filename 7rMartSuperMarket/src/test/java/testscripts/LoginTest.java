@@ -1,28 +1,21 @@
 package testscripts;
 
-import static org.testng.Assert.assertTrue;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-
 import pages.LoginPage;
 import utility.ExcelUtility;
 
 public class LoginTest extends Base{
-	@Test(description="this is for successfull login",groups= {"smoke","regression"},priority=1)
+	@Test(description="this is for successfull login",groups= {"smoke","regression"},priority=1,retryAnalyzer=retry.Retry.class)
 	public void verifyUserAbleToLoginWithValidUsernameAndValidPassword()
 	{
 		
-		String username=ExcelUtility.getString(0, 1, "LoginPage");
+		String username=ExcelUtility.getString(1, 0, "LoginPage");
 		String password=ExcelUtility.getString(1, 1, "LoginPage");
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(username);
-		loginpage.enterpassWordOnPasswordField(password);
-		loginpage.signInClickOn();
+		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();
+		
 		boolean isNavigatedToDashBoard=loginpage.isDashBoardDisplayed();
 		
 		Assert.assertTrue(isNavigatedToDashBoard, "unable to login with valid credentials");
@@ -34,9 +27,7 @@ public class LoginTest extends Base{
 		String username=ExcelUtility.getString(2, 0,"LoginPage");
 		String password=ExcelUtility.getString(2, 1,"LoginPage");
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(username);
-		loginpage.enterpassWordOnPasswordField(password);
-		loginpage.signInClickOn();
+		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();		
 	    boolean isAlertVisibleDisplayed =loginpage.isAlertDisplayed();
 	    Assert.assertTrue(isAlertVisibleDisplayed, "user able to login with invalid credentials");
 	 }
@@ -47,9 +38,7 @@ public class LoginTest extends Base{
 		String username=ExcelUtility.getString(3, 0, "LoginPage");
 		String password=ExcelUtility.getString(3, 1, "LoginPage");
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(username);
-		loginpage.enterpassWordOnPasswordField(password);
-		loginpage.signInClickOn();
+		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();		
 	    boolean isAlertVisibleDisplayed =loginpage.isAlertDisplayed();
 	    Assert.assertTrue(isAlertVisibleDisplayed, "user able to login with invalid credentials");
 	 }	
@@ -60,9 +49,7 @@ public class LoginTest extends Base{
 		
 		
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(username);
-		loginpage.enterpassWordOnPasswordField(password);
-		loginpage.signInClickOn();
+		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();
 	    boolean isAlertVisibleDisplayed =loginpage.isAlertDisplayed();
 	    Assert.assertTrue(isAlertVisibleDisplayed, "user able to login with invalid credentials");
 	
@@ -72,7 +59,7 @@ public class LoginTest extends Base{
      {
     	 return new Object[][] {  
     		 
-    	new Object[] {"abc","abc"}	 ,
+    	new Object[] {ExcelUtility.getString(0, 1, "LoginPage"),ExcelUtility.getString(0, 1, "LoginPage")}	 ,
     	new Object[] {"123","123"}		 
     	 };
      }

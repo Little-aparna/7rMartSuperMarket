@@ -1,22 +1,11 @@
 package pages;
 
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import utility.PageUtility;
 import utility.RandomUtility;
-import utility.WaitUtility;
-//import utility.WaitUtility;
 
 public class AdminUsersPage {
 
@@ -69,8 +58,7 @@ public class AdminUsersPage {
 	}
 
 	public void selectDropdown() {
-		PageUtility pagautility = new PageUtility(driver);
-		//pagautility.selectClickByVisibleText(dropDownElement, "Partner");
+		PageUtility pagautility = new PageUtility(driver);		
 		pagautility.selectDropdownByVisibleText(dropDownElement, "Partner");
 	}
 
@@ -88,8 +76,5 @@ public class AdminUsersPage {
 		boolean isAlertSuccessDisplayed=alertSuccess.isDisplayed();
 		return isAlertSuccessDisplayed;
 	}
-
-
 	
-	// table[@class='table table-bordered table-hover table-sm']//tr//th
 }

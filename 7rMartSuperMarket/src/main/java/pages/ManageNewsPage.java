@@ -34,7 +34,7 @@ public class ManageNewsPage {
 	private WebElement alertDisplayed;
 	public void manageNewsButton() {
          WaitUtility wait=new WaitUtility();
-         wait.waitForElement(driver, manageNewsButton);
+         wait.waitForElementVisible(driver, manageNewsButton);
 		
 		manageNewsButton.click();
 

@@ -12,23 +12,31 @@ public class RandomUtility {
 		Faker faker = new Faker();
 		return faker.name().firstName();
 	}
-
-	public String createaRandomName2() {
+	public String createARandomAddress() {
 		Faker faker = new Faker();
-		return faker.name().lastName();
+		return faker.name().firstName();
 	}
 
+	public String createARandomEmail() {
+		Faker faker = new Faker();
+	return faker.name().firstName();
+		
+	}
+	public String createARandomPhoneNumber() {
+		Faker faker = new Faker();
+		return faker.name().firstName();
+	}
 	public String createaRandomName3() {
 		Faker faker = new Faker();
 		return faker.name().name();
 	}
 
-	public String createaRandomName4() {
+	public String createaRandomNameWithMiddleName() {
 		Faker faker = new Faker();
 		return faker.name().nameWithMiddle();
 	}
 
-	public String createaRandomName5() {
+	public String createaRandomNamePrefix() {
 		Faker faker = new Faker();
 		return faker.name().prefix();
 	}

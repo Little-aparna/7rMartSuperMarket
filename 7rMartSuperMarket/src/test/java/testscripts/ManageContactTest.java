@@ -15,9 +15,7 @@ public class ManageContactTest extends Base{
 	String password = ExcelUtility.getString(1, 1, "LoginPage");	
 	String text=ExcelUtility.getString(9, 1, "LoginPage")	;
 	LoginPage loginpage = new LoginPage(driver);
-	loginpage.enterUserNameOnUserNameField(username);
-	loginpage.enterpassWordOnPasswordField(password);
-	loginpage.signInClickOn();
+	loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();	
 	ManageContactPage managecontactpage=new ManageContactPage(driver);
 	managecontactpage.clickOnManageContactPage();
 	managecontactpage.getTableOptions();

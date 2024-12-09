@@ -108,7 +108,13 @@ public class SubCategoryPage {
 	public void imageUploading(String filePath) {
 		FileUploadUtility fileuploadutility = new FileUploadUtility();		
 		fileuploadutility.verifyFileUploadusingSendKeys(chooseImage, filePath);
+		
 	}
+	public void scrollDown() {
+		PageUtility pageutility = new PageUtility(driver);		
+		pageutility.javaScriptExecutorScrolledFromTopToBottom(driver);
+	}
+
 
 	public void saveNewAddCategory() {
 		saveAddSubCategoryElement.click();

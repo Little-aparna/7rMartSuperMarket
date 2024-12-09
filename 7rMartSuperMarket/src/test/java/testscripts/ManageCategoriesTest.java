@@ -1,7 +1,5 @@
 package testscripts;
 
-import java.sql.Driver;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,10 +13,9 @@ public class ManageCategoriesTest extends Base {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
 		String categoryNameValue = ExcelUtility.getString(8, 1, "LoginPage");
-		ManageCategoriesPage managecategoriespage = new ManageCategoriesPage(driver);
-		managecategoriespage.enterUserNameOnUserNameField(username);
-		managecategoriespage.enterpassWordOnPasswordField(password);
-		managecategoriespage.signInClickOn();
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();
+		ManageCategoriesPage managecategoriespage = new ManageCategoriesPage(driver);		
 		managecategoriespage.clickOnManageCategory();
 		managecategoriespage.isListCategoryVisible();
 		managecategoriespage.clickOnSearchButton();

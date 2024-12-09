@@ -27,22 +27,25 @@ public class LoginPage {
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 	private WebElement alertDisplayed;
 
-	public void enterUserNameOnUserNameField(String username)
+	public  LoginPage enterUserNameOnUserNameField(String username)
 
 	{
 		userNameField.sendKeys(username);
+		return this;
 	}
 
-	public void enterpassWordOnPasswordField(String password)
+	public  LoginPage enterpassWordOnPasswordField(String password)
 
 	{
 		passwordField.sendKeys(password);
+		return this;
 	}
 
-	public void signInClickOn()
+	public  LoginPage signInClickOn()
 
 	{
 		signInButton.click();
+		return this;
 	}
 
 	public boolean isDashBoardDisplayed()

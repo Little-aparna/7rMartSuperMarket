@@ -77,27 +77,27 @@ public class PageUtility {
 	}
 
 	// Scrolling
-	public void javaScriptExecutorSample1(WebDriver driver) {
+	public void javaScriptExecutorScrolledFromTopToBottom(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");// scrolled from top to bottom
 	}
 
-	public void javaScriptExecutorSample2(WebDriver driver, WebElement element) {
+	public void javaScriptExecutorClick(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", element);
 	}
 
-	public void javaScriptExecutorSample3(WebDriver driver) {
+	public void javaScriptExecutorScrolledFromBottomToTop(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,-350)", "");// scrolled from bottom to top
 	}
 
-	public void javaScriptExecutorSample4(WebDriver driver, WebElement element) {
+	public void javaScriptExecutorScrollIntoView(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", element);
 	}
 
-	public void javaScriptExecutorSample5(WebDriver driver) {
+	public void javaScriptExecutorScrolledToTheEnd(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)"); // scrolled to the end
 	}

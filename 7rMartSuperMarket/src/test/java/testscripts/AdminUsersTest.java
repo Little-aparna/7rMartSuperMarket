@@ -1,8 +1,7 @@
 package testscripts;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import constants.Constants;
 import pages.AdminUsersPage;
 import pages.LoginPage;
 import utility.ExcelUtility;
@@ -24,7 +23,8 @@ public class AdminUsersTest extends Base {
 		adminuserspage.selectDropdown();
 		adminuserspage.enterNewPassword();
 		adminuserspage.clickonSaveButton();
-		adminuserspage.alertSuccessDisplayed();
+		boolean isAlertDisplayed=adminuserspage.alertSuccessDisplayed();
+		Assert.assertTrue(isAlertDisplayed, "cannot add new user");
 		
 	}
 }

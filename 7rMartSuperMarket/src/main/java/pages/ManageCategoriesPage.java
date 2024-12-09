@@ -39,23 +39,7 @@ public class ManageCategoriesPage {
 	@FindBy(xpath = "//button[@class='btn btn-danger btn-fix']")
 	private WebElement categorysearch;
 
-	public void enterUserNameOnUserNameField(String username)
-
-	{
-		userNameField.sendKeys(username);
-	}
-
-	public void enterpassWordOnPasswordField(String password)
-
-	{
-		passwordField.sendKeys(password);
-	}
-
-	public void signInClickOn()
-
-	{
-		signInButton.click();
-	}
+	
 
 	public boolean isDashBoardDisplayed()
 
@@ -67,7 +51,7 @@ public class ManageCategoriesPage {
 	public void clickOnManageCategory() {
 		
 		WaitUtility waitutility = new WaitUtility();
-		waitutility.waitForElement(driver, manageCategory);
+		waitutility.waitForElementVisible(driver, manageCategory);
         manageCategory.click();
 
 	}
