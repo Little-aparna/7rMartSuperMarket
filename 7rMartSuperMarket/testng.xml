@@ -9,9 +9,9 @@
   <test thread-count="5" name="Test">
   
     <classes>
-      <class name="testscripts.ManageFootertextTest">
+      <class name="testscripts.LoginTest">
       <methods>
-      <include name="verifyUserAbleViewOnManageFooterList"></include>
+      <include name="verifyUserAbleToLoginWithValidUsernameAndValidPassword"></include>
       </methods>
       </class>
     </classes>

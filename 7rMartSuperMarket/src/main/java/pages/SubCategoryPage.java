@@ -82,7 +82,7 @@ public class SubCategoryPage {
 
 	public void selectDropDown() {
 
-		pageutility.selectDropdownByIndex(dropDown, 1);
+		pageutility.selectDropdownByIndex(dropDown1, 1);
 
 	}
 
