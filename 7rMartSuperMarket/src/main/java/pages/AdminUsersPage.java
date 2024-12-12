@@ -39,31 +39,37 @@ public class AdminUsersPage {
 	
 	
 	
-	public void clickonAdminUserMoreInfoIcon() {
+	public AdminUsersPage clickonAdminUserMoreInfoIcon() {
 		adminMoreInfoIcon.click();
+		return this;
 	}
 
-	public void clickonNewIcon() {
+	public AdminUsersPage clickonNewIcon() {
 		newIconElement.click();
+		return this;
 	}
 	
-	public void enterNewUserName() {
+	public AdminUsersPage enterNewUserName() {
 		String randomUserName1=randomutility.createaRandomName();
 		newUserNameElement.sendKeys(randomUserName1);
+		return this;
 	}
 
-	public void enterNewPassword() {
+	public AdminUsersPage enterNewPassword() {
 		String randomPassword1=randomutility.createARandomPassword();
 		newPasswordElement.sendKeys(randomPassword1);
+		return this;
 	}
 
-	public void selectDropdown() {
+	public AdminUsersPage selectDropdown() {
 		PageUtility pagautility = new PageUtility(driver);		
 		pagautility.selectDropdownByVisibleText(dropDownElement, "Partner");
+		return this;
 	}
 
-	public void clickonSaveButton() {
+	public AdminUsersPage clickonSaveButton() {
 		saveField.click();
+		return this;
 	}
 
 	public String alertAvailable() {

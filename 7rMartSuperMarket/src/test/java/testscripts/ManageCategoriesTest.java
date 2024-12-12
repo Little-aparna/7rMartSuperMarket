@@ -16,10 +16,8 @@ public class ManageCategoriesTest extends Base {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();
 		ManageCategoriesPage managecategoriespage = new ManageCategoriesPage(driver);		
-		managecategoriespage.clickOnManageCategory();
-		managecategoriespage.isListCategoryVisible();
-		managecategoriespage.clickOnSearchButton();
-		managecategoriespage.searchListCategory(categoryNameValue);
+		managecategoriespage.clickOnManageCategory().clickOnSearchButton().searchListCategory(categoryNameValue);
+		managecategoriespage.isListCategoryVisible();		
 		boolean categorySearchCorrectly = managecategoriespage.clickOnCategorySearchButton();
 		Assert.assertTrue(categorySearchCorrectly, "category search not correctly displayed");
 	}

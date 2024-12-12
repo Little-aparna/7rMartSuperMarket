@@ -33,29 +33,35 @@ public class AdminUsersSearchPage {
 	private WebElement searchButton;
 	@FindBy(xpath = "//th[text()='Username']")
 	private WebElement searchShown;
-	public void clickonAdminUserMoreInfoIcon() {
+	public AdminUsersSearchPage clickonAdminUserMoreInfoIcon() {
 		adminMoreInfoIcon.click();
+		return this;
 	}
 
-	public void clickSearchIcon() {
+	public AdminUsersSearchPage clickSearchIcon() {
 		searchIconElement.click();
+		return this;
 	}
-	public void enterUserName(String adminUser)
+	public AdminUsersSearchPage enterUserName(String adminUser)
 	{
 		newUserNameElement.sendKeys(adminUser);
+		return this;
 	}
-	public void selectDropDown()
+	public AdminUsersSearchPage selectDropDown()
 	{
 		PageUtility pageutility=new PageUtility(driver);
 		pageutility.selectDropdownByIndex(dropDown, 2);
+		return this;
 	}
-	public void clickSearchButton()
+	public AdminUsersSearchPage clickSearchButton()
 	{
-		searchButton.click();;
+		searchButton.click();
+		return this;
 	}
-	public void scrollDown() {
+	public AdminUsersSearchPage scrollDown() {
 		PageUtility pageutility = new PageUtility(driver);		
 		pageutility.javaScriptExecutorScrolledFromTopToBottom(driver);
+		return this;
 	}
 	public boolean isSearchDisplayed()
 	{

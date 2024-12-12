@@ -17,8 +17,8 @@ public class ManageContactTest extends Base{
 	LoginPage loginpage = new LoginPage(driver);
 	loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();	
 	ManageContactPage managecontactpage=new ManageContactPage(driver);
-	managecontactpage.clickOnManageContactPage();
-	managecontactpage.getTableOptions();
+	managecontactpage.clickOnManageContactPage().getTableOptions();
+	
 	boolean navigatedToManageContactPage=managecontactpage.isManageContactPageVisible();
 	Assert.assertTrue(navigatedToManageContactPage, "Not navigated to Manage contact page");
    

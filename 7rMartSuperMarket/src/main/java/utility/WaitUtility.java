@@ -26,12 +26,12 @@ public class WaitUtility {
 		wait.until(ExpectedConditions.elementToBeClickable(target));
 	}
 
-	public void waitForElement3(WebDriver driver, String target) {
+	public void waitForElementVVisibilityByXpath(WebDriver driver, String target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(target)));
 	}
 
-	public void waitForElement4(WebDriver driver, String target) {
+	public void waitForPresenceOfElementLocatedByXpath(WebDriver driver, String target) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(target)));
 	}
@@ -52,7 +52,7 @@ public class WaitUtility {
 
 	}
 
-	public void implicitWait1(WebDriver driver) {
+	public void implicitWaitDurationOfHour(WebDriver driver) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofHours(IMPLICIT_WAIT));
 
 	}
@@ -64,14 +64,14 @@ public class WaitUtility {
 
 	}
 
-	public void FluentWait1(WebDriver driver, WebElement target) {
+	public void FluentWaitAlertIsPresent(WebDriver driver, WebElement target) {
 		Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
 				.pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
 		fluentWait.until(ExpectedConditions.alertIsPresent());
 
 	}
 
-	public void FluentWait2(WebDriver driver, WebElement target) {
+	public void FluentWaitVisibilityOfTarget(WebDriver driver, WebElement target) {
 		Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
 				.pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
 		fluentWait.until(ExpectedConditions.visibilityOf(target));

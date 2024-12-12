@@ -33,15 +33,16 @@ public class ManageContactPage {
 	@FindBy(xpath = "//h4[text()='Contact Us']")
 	private WebElement manageContactPageVisible;
 
-	public void clickOnManageContactPage() {
+	public ManageContactPage clickOnManageContactPage() {
 
 		WaitUtility waitutility = new WaitUtility();
 		waitutility.waitForElementVisible(driver, manageContact);
 		manageContact.click();
+		return this;
 
 	}
 	
-	 public void getTableOptions()
+	 public ManageContactPage getTableOptions()
 	  {  
 		  
 	     
@@ -58,7 +59,7 @@ public class ManageContactPage {
 	  }
 	  
 	  }
-	  
+	  return this;
 	  }
 	 public boolean isManageContactPageVisible()
 	 {

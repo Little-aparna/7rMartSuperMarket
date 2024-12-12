@@ -15,13 +15,7 @@ public class ManageFootertextTest extends Base {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();		
 		ManageFootertextPage managefootertextpage = new ManageFootertextPage(driver);
-		managefootertextpage.scrollDown();
-		managefootertextpage.clickonMoreInfoButton();
-		managefootertextpage.clickonEditIcon();
-		managefootertextpage.enterAddressonAddressField();
-		managefootertextpage.entereEmailonEmailField();
-		managefootertextpage.entereNumberonPhoneNumberField();		
-		managefootertextpage.clickonSubmitButton();
+		managefootertextpage.scrollDown().clickonMoreInfoButton().clickonEditIcon().enterAddressonAddressField().entereEmailonEmailField().entereNumberonPhoneNumberField().clickonSubmitButton();		
 		boolean navigatedToAlert=managefootertextpage.isAlertavailable();
 		Assert.assertTrue(navigatedToAlert, "footer Text not updated successfully");
 		

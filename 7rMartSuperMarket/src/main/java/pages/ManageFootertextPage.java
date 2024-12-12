@@ -35,46 +35,53 @@ public class ManageFootertextPage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alert;
 
-	public void scrollDown() {
+	public ManageFootertextPage scrollDown() {
 		PageUtility pageutility = new PageUtility(driver);		
 		pageutility.javaScriptExecutorScrolledFromTopToBottom(driver);
+		return this;
 	}
 
-	public void clickonMoreInfoButton() {
+	public ManageFootertextPage clickonMoreInfoButton() {
 		WaitUtility waitutility = new WaitUtility();
 		waitutility.waitForElementToBeClickable(driver, moreInfo);
 		moreInfo.click();
+		return this;
 	}
 
-	public void clickonEditIcon() {
+	public ManageFootertextPage clickonEditIcon() {
 		editIcon.click();
+		return this;
 	}
 
-	public void enterAddressonAddressField() {
+	public ManageFootertextPage enterAddressonAddressField() {
 		addressField.clear();
 		RandomUtility randomutility = new RandomUtility();
 		String address = randomutility.createARandomAddress();
 		addressField.sendKeys(address);
+		return this;
 	}
 
-	public void entereEmailonEmailField() {
+	public ManageFootertextPage entereEmailonEmailField() {
 		emailField.clear();
 		RandomUtility randomutility = new RandomUtility();
 		String email = randomutility.createARandomEmail();
 		emailField.sendKeys(email);
+		return this;
 	}
 
-	public void entereNumberonPhoneNumberField() {
+	public ManageFootertextPage entereNumberonPhoneNumberField() {
 		phoneNumberField.clear();
 		RandomUtility randomutility = new RandomUtility();
 		String phoneNumber = randomutility.createARandomPhoneNumber();
 		phoneNumberField.sendKeys(phoneNumber);
+		return this;
 	}
 
-	public void clickonSubmitButton() {
+	public ManageFootertextPage clickonSubmitButton() {
 		WaitUtility waitutility = new WaitUtility();
 		waitutility.waitForElementToBeClickable(driver, submitField);
 		submitField.click();
+		return this;
 	}
 	public boolean isAlertavailable() {
 		boolean isAlertSuccessMessageDisplayed = alert.isDisplayed();

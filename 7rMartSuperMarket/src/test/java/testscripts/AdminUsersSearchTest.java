@@ -17,12 +17,7 @@ public class AdminUsersSearchTest extends Base {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();		
 		AdminUsersSearchPage adminuserssearch=new AdminUsersSearchPage(driver);
-		adminuserssearch.clickonAdminUserMoreInfoIcon();
-		adminuserssearch.clickSearchIcon();
-		adminuserssearch.enterUserName(adminUser);
-		adminuserssearch.selectDropDown();
-		adminuserssearch.clickSearchButton();
-		adminuserssearch.scrollDown();
+		adminuserssearch.clickonAdminUserMoreInfoIcon().clickSearchIcon().enterUserName(adminUser).selectDropDown().clickSearchButton().scrollDown();		
 		boolean navigatedToSearch=adminuserssearch.isSearchDisplayed();
 		Assert.assertTrue(navigatedToSearch, "search not correctly displayed");
 		

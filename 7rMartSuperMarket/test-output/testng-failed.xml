@@ -2,18 +2,20 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="browser" value="Chrome"/>
-  <listeners>
-    <listener class-name="listeners.Listeners"/>
-  </listeners>
   <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
     <classes>
-      <class name="testscripts.AdminUsersSearchTest">
+      <class name="testscripts.SubCategoryTest">
         <methods>
           <include name="initializeBrowser"/>
-          <include name="verifyUserAbleToSearchOnAdminUserList"/>
+          <include name="verifyUserAbleToEditAndViewOnSubCategoryList"/>
           <include name="driverQuit"/>
         </methods>
-      </class> <!-- testscripts.AdminUsersSearchTest -->
+      </class> <!-- testscripts.SubCategoryTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

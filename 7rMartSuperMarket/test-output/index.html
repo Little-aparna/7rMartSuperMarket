@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\droju\git\repository6\7rMartSuperMarket\testng.xml</span>
+                    <span>C:\Users\droju\git\repository6\7rMartSuperMarket\grouping_testNG.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Suite" class="navigator-link ">
-                    <span>2 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testscripts.LoginTest" class="method navigator-link" hash-for-method="verifyUserAbleToLoginWithValidUsernameAndValidPassword">verifyUserAbleToLoginWithValidUsernameAndValidPassword</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="testscripts.SubCategoryTest" class="method navigator-link" hash-for-method="verifyUserAbleToEditAndViewOnSubCategoryList">verifyUserAbleToEditAndViewOnSubCategoryList</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -121,16 +121,16 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testscripts.LoginTest</span>
+              <span class="class-name">testscripts.SubCategoryTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyUserAbleToLoginWithValidUsernameAndValidPassword">
-                  </a> <!-- verifyUserAbleToLoginWithValidUsernameAndValidPassword -->
-                  <span class="method-name">verifyUserAbleToLoginWithValidUsernameAndValidPassword</span>
+                  <a name="verifyUserAbleToEditAndViewOnSubCategoryList">
+                  </a> <!-- verifyUserAbleToEditAndViewOnSubCategoryList -->
+                  <span class="method-name">verifyUserAbleToEditAndViewOnSubCategoryList</span>
                   <em>
-(this is for successfull login)                  </em>
+(to verify user able to edit and view sub category)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -138,7 +138,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\droju\git\repository6\7rMartSuperMarket\testng.xml</span>
+            <span class="header-content">C:\Users\droju\git\repository6\7rMartSuperMarket\grouping_testNG.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,16 +146,14 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
-  &lt;listeners&gt;
-    &lt;listener class-name=&quot;listeners.Listeners&quot;/&gt;
-  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;smoke&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testscripts.LoginTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;verifyUserAbleToLoginWithValidUsernameAndValidPassword&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testscripts.LoginTest --&gt;
+      &lt;class name=&quot;testscripts.SubCategoryTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -180,18 +178,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">regression</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">verifyUserAbleToLoginWithValidUsernameAndValidPassword</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
-            <div class="test-group">
               <span class="test-group-name">smoke</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">verifyUserAbleToLoginWithValidUsernameAndValidPassword</span>
+                <span class="method-in-group-name">verifyUserAbleToEditAndViewOnSubCategoryList</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -213,14 +203,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyUserAbleToLoginWithValidUsernameAndValidPassword')
-data.setCell(0, 2, 'testscripts.LoginTest')
-data.setCell(0, 3, 4010);
+data.setCell(0, 1, 'verifyUserAbleToEditAndViewOnSubCategoryList')
+data.setCell(0, 2, 'testscripts.SubCategoryTest')
+data.setCell(0, 3, 9267);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -235,20 +225,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">testscripts.LoginTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">userAbleToLoginWithInvalidPassword</span>
-                <br/>
-                <span class="ignored-method-name">verifyUserAbleToLoginWithInvalidUsernameAndInvalidPassword</span>
-                <br/>
-                <span class="ignored-method-name">verifyUserAbleTologinWithInvalidUsername</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -257,18 +236,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testscripts.LoginTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testscripts.SubCategoryTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">initializeBrowser(Chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyUserAbleToLoginWithValidUsernameAndValidPassword</span>
-                <span class="method-start">7211 ms</span>
+                <span class="method-name">verifyUserAbleToEditAndViewOnSubCategoryList</span>
+                <span class="method-start">8389 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">driverQuit([TestResult name=verifyUserAbleToLoginWithValidUsernameAndValidPassword status=SUCCESS method=LoginT...)</span>
-                <span class="method-start">11236 ms</span>
+                <span class="method-name">driverQuit([TestResult name=verifyUserAbleToEditAndViewOnSubCategoryList status=SUCCESS method=SubCategoryTest....)</span>
+                <span class="method-start">17667 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -29,28 +29,34 @@ public class ManageProductPage {
 	private WebElement searchButton;
 	@FindBy(xpath = "(//h4[@class='card-title'])[2]")
 	private WebElement searchResult;
-	public void scrollDown() {
+	public ManageProductPage scrollDown() {
 		PageUtility pageutility = new PageUtility(driver);		
 		pageutility.javaScriptExecutorScrolledFromTopToBottom(driver);
+		return this;
 	}
 
-	public void clickonMoreInfoButton() {
+	public ManageProductPage clickonMoreInfoButton() {
 		WaitUtility waitutility = new WaitUtility();
 		waitutility.waitForElementToBeClickable(driver, moreInfo);
 		moreInfo.click();
+		return this;
 	}
-	public void clickonsearchIcon() {
+	public ManageProductPage clickonsearchIcon() {
 		searchIcon.click();
+		return this;
 	}
-	public void enterTitleElement(String searchItem) {
+	public ManageProductPage enterTitleElement(String searchItem) {
 		titleElement.sendKeys(searchItem);
+		return this;
 	}
-	public void clickonSearchButton() {
+	public ManageProductPage clickonSearchButton() {
 		searchButton.click();
+		return this;
 	}
-	public void scrollDown1() {
+	public ManageProductPage scrollDown1() {
 		PageUtility pageutility = new PageUtility(driver);		
 		pageutility.javaScriptExecutorScrolledFromTopToBottom(driver);
+		return this;
 	}
 	public boolean isSearchDisplayed()
 	{

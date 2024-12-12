@@ -41,11 +41,11 @@ public class LoginPage {
 		return this;
 	}
 
-	public  LoginPage signInClickOn()
+	public SubCategoryPage signInClickOn()
 
 	{
 		signInButton.click();
-		return this;
+		return new SubCategoryPage(driver);
 	}
 
 	public boolean isDashBoardDisplayed()

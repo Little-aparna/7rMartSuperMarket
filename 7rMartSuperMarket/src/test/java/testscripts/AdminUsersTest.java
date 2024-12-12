@@ -15,12 +15,7 @@ public class AdminUsersTest extends Base {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();		
 		AdminUsersPage adminuserspage=new AdminUsersPage (driver);
-		adminuserspage.clickonAdminUserMoreInfoIcon();		
-		adminuserspage.clickonNewIcon();
-		adminuserspage.enterNewUserName();
-		adminuserspage.selectDropdown();
-		adminuserspage.enterNewPassword();
-		adminuserspage.clickonSaveButton();
+		adminuserspage.clickonAdminUserMoreInfoIcon().clickonNewIcon().enterNewUserName().selectDropdown().enterNewPassword().clickonSaveButton();		
 		boolean isAlertDisplayed=adminuserspage.alertSuccessDisplayed();
 		Assert.assertTrue(isAlertDisplayed, "cannot add new user");
 		

@@ -17,10 +17,7 @@ public class ManageNewsTest extends Base {
 	LoginPage loginpage = new LoginPage(driver);
 	loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();	
 	ManageNewsPage managenewspage=new ManageNewsPage(driver);
-	managenewspage.manageNewsButton();
-	managenewspage.clickNewButton();
-	managenewspage.enterTheNews(text);
-	managenewspage.clickOnSave();
+	managenewspage.manageNewsButton().clickNewButton().enterTheNews(text).clickOnSave();	
 	boolean isNavigatedToAlert=managenewspage.alerIstDisplayed();
 	Assert.assertTrue(isNavigatedToAlert, "New news cannot be added");
 	

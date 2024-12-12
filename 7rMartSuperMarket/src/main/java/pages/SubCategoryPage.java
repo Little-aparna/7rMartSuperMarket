@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utility.FileUploadUtility;
@@ -35,9 +34,9 @@ public class SubCategoryPage {
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-primary']")
 	private WebElement searchButton;
 	@FindBy(xpath = "//select[@class='form-control selectpicker']")
-	private WebElement CategoryElement;
-	@FindBy(id = "un")
 	private WebElement dropDown;
+	@FindBy(xpath="//input[@class='form-control']")
+	private WebElement subCategoryText;
 	@FindBy(xpath = "//button[@class='btn btn-danger btn-fix']")
 	private WebElement subCategorySearch;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
@@ -53,11 +52,12 @@ public class SubCategoryPage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alertDisplayed;
 
-	public void clickOnSubCategoryButton() {
+	public SubCategoryPage clickOnSubCategoryButton() {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(subCategoryButton));
 		subCategoryButton.click();
+		return this;
 
 	}
 
@@ -71,53 +71,67 @@ public class SubCategoryPage {
 		return isSubCategoryListAvailable;
 	}
 
-	public void clickOnSearchButton() {
+	public SubCategoryPage clickOnSearchButton() {
 		searchButton.click();
+		return this;
 	}
 
 	public boolean isCategorySearchListAvailable() {
-		boolean isSearchPageDisplayed = CategoryElement.isDisplayed();
+		boolean isSearchPageDisplayed = subCategoryText.isDisplayed();
 		return isSearchPageDisplayed;
 	}
 
-	public void selectDropDown() {
+	public SubCategoryPage selectDropDown() {
 
-		pageutility.selectDropdownByIndex(dropDown1, 1);
+		pageutility.selectDropdownByIndex(dropDown, 1);
+		return this;
 
 	}
+	public SubCategoryPage enterTheSubcategory(String categoryElement)
+	{
+		subCategoryText.sendKeys(categoryElement);
+		return this;
+	}
 
-	public void clickOnSubCategorySearch() {
+	public SubCategoryPage clickOnSubCategorySearch() {
 		subCategorySearch.click();
+		return this;
 	}
 
-	public void clickOnNewButton() {
+	public SubCategoryPage clickOnNewButton() {
 		newButton.click();
+		return this;
 	}
 
-	public void enterTheSubCategoryElements(String enterSubCategory) {
+	public SubCategoryPage enterTheSubCategoryElements(String enterSubCategory) {
 		RandomUtility randomutility = new RandomUtility();
 		String sub_category_name = randomutility.createaRandomName();
 		subCategoryElement.sendKeys(sub_category_name);
+		return this;
 	}
 
-	public void dropDown1() {
+	public SubCategoryPage dropDown1() {
 
 		pageutility.selectDropdownByIndex(dropDown1, 1);
+		return this;
 	}
 
-	public void imageUploading(String filePath) {
+	public SubCategoryPage imageUploading(String filePath) {
 		FileUploadUtility fileuploadutility = new FileUploadUtility();		
 		fileuploadutility.verifyFileUploadusingSendKeys(chooseImage, filePath);
+		return this;
 		
 	}
-	public void scrollDown() {
+	public SubCategoryPage scrollDown() {
 		PageUtility pageutility = new PageUtility(driver);		
 		pageutility.javaScriptExecutorScrolledFromTopToBottom(driver);
+		return this;
 	}
 
 
-	public void saveNewAddCategory() {
+	public SubCategoryPage saveNewAddCategory() {
 		saveAddSubCategoryElement.click();
+		return this;
 
 	}
 

@@ -17,12 +17,7 @@ public class ManageProductTest extends Base {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username).enterpassWordOnPasswordField(password).signInClickOn();		
 		ManageProductPage manageproductpage = new ManageProductPage(driver);
-		manageproductpage.scrollDown();
-		manageproductpage.clickonMoreInfoButton();
-		manageproductpage.clickonsearchIcon();
-		manageproductpage.enterTitleElement(searchItem);
-		manageproductpage.clickonSearchButton();
-		manageproductpage.scrollDown1();
+		manageproductpage.scrollDown().clickonMoreInfoButton().clickonsearchIcon().enterTitleElement(searchItem).clickonSearchButton().scrollDown1();		
 		boolean searchdisplayed=manageproductpage.isSearchDisplayed();
 		Assert.assertTrue(searchdisplayed, "Search is not correctly shown");
 	

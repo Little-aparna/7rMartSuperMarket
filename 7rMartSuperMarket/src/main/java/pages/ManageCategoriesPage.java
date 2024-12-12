@@ -43,11 +43,12 @@ public class ManageCategoriesPage {
 		return isHomepageAvailable;
 	}
 
-	public void clickOnManageCategory() {
+	public ManageCategoriesPage clickOnManageCategory() {
 		
 		WaitUtility waitutility = new WaitUtility();
 		waitutility.waitForElementVisible(driver, manageCategory);
         manageCategory.click();
+        return this;
 
 	}
 
@@ -56,12 +57,14 @@ public class ManageCategoriesPage {
 		return isListCategoryShown;
 	}
 
-	public void clickOnSearchButton() {
+	public ManageCategoriesPage clickOnSearchButton() {
 		searchButton.click();
+		return this;
 	}
 
-	public void searchListCategory(String categoryNameValue) {
+	public ManageCategoriesPage searchListCategory(String categoryNameValue) {
 		categoryText.sendKeys(categoryNameValue);
+		return this;
 	}
 
 	public boolean clickOnCategorySearchButton() {

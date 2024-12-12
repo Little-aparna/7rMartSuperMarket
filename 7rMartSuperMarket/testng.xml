@@ -9,9 +9,9 @@
   <test thread-count="5" name="Test">
   
     <classes>
-      <class name="testscripts.LoginTest">
+      <class name="testscripts.CategoryTest">
       <methods>
-      <include name="verifyUserAbleToLoginWithValidUsernameAndValidPassword"></include>
+      <include name="verifyUserAbleToEditAndViewCategory"></include>
       </methods>
       </class>
     </classes>

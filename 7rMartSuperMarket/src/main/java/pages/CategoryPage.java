@@ -20,10 +20,10 @@ public class CategoryPage {
 	   @FindBy(xpath="//input[@class='form-control']") private WebElement searchElement;
 	   @FindBy(xpath="//button[@type='submit']") private WebElement categorySearchButton;
 	   @FindBy(xpath="//th[text()='Title']") private WebElement categorySearchAvailable;
-	   public void clickOnCategoryButton()
+	   public CategoryPage clickOnCategoryButton()
 	   {
 		   categoryButton.click();
-		   
+		   return this;
 		
 	   }
 	   public boolean isListcategoryDisplayed()
@@ -33,22 +33,25 @@ public class CategoryPage {
 		   return isListcategorydisplayed;
 	   }
 	  
-	   public void clickOnSearch()
+	   public CategoryPage clickOnSearch()
 	   {
 		    searchButton.click();
+		    return this;
 	   }
 	   public boolean isSearchDisplayed()
 	   {
 		   boolean isSearchAvailable=searchElement.isDisplayed();
 		   return isSearchAvailable;
 	   }
-	   public void enterCategoryTextOnCategoryField(String categoryName)
+	   public CategoryPage enterCategoryTextOnCategoryField(String categoryName)
 	   {
 		   searchElement.sendKeys(categoryName);
+		   return this;
 	   }
-	   public void clickOnCategorySearch()
+	   public CategoryPage clickOnCategorySearch()
 	   {
 		   categorySearchButton.click();
+		   return this;
 	   }
 	   public boolean isCategoryCorrectlyShown()
 	   {
